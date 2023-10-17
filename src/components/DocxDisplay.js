@@ -28,10 +28,7 @@ const DocxDisplay = ({ file }) => {
   };
 
   return (
-    <div className='w-8/12 mx-auto'>
       <div dangerouslySetInnerHTML={{ __html: docContent }} />
-    </div>
-    
   );
 };
 

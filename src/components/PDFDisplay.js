@@ -9,13 +9,11 @@ const PDFDisplay = ({ file }) => {
   };
 
   return (
-    <div className='w-10/12 mx-auto'>
-      <Document className='mx-auto' file={file} onLoadSuccess={handleLoadSuccess}>
+    <Document file={file} onLoadSuccess={handleLoadSuccess}>
       {Array.from(new Array(numPages), (el, index) => (
         <Page key={`page_${index + 1}`} pageNumber={index + 1} />
       ))}
     </Document>
-    </div>
   );
 };
 
