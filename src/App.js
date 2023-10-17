@@ -3,6 +3,8 @@ import FileUpload from './components/FileUpload';
 import PDFDisplay from './components/PDFDisplay';
 import DocxDisplay from './components/DocxDisplay';
 
+// copywrite belongs to Maruf Ibne Hossain.
+
 function App() {
   const [file, setFile] = useState(null);
   const [fileURL, setFileURL] = useState(null);
