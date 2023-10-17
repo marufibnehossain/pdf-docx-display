@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Document, Page } from 'react-pdf';
-// copywrite belongs to Maruf Ibne Hossain.
 
 const PDFDisplay = ({ file }) => {
+  const [numPages, setNumPages] = useState(null);
+
+  const handleLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
+
   return (
-    <Document file={file}>
-      <Page pageNumber={1} />
+    <div className='w-10/12 mx-auto'>
+      <Document className='mx-auto' file={file} onLoadSuccess={handleLoadSuccess}>
+      {Array.from(new Array(numPages), (el, index) => (
+        <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+      ))}
     </Document>
+    </div>
   );
 };
 
